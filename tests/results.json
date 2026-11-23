@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-24",
+  "os": "Windows 11 Home China 10.0.26200 (AMD64)",
+  "python": "CPython 3.11.9 (64-bit)",
+  "game": {
+    "title": "Probably Stolen",
+    "steam_app_id": 4348910,
+    "steam_build_id": 26525552,
+    "save_source": "most recently saved slot"
+  },
+  "protocol": "2025-06-18",
+  "fixture_tests_passed": 6,
+  "live_stdio": {
+    "tools": 12,
+    "calls": [
+      "saves",
+      "overview",
+      "kb_search",
+      "kb_get",
+      "weekly_report",
+      "inventory",
+      "save_get"
+    ],
+    "reports_created": 22,
+    "save_files_verified": 2
+  },
+  "retrieval": {
+    "queries": 120,
+    "documents": 2855,
+    "top1": 95,
+    "top3": 110,
+    "kb_version": "0.5.0",
+    "queries_sha256": "d921a696611e5766665844278fd0f6b3e0d341553cccb066601256e1921bb4d9",
+    "top3_misses": [
+      "联系人用来买升级的私人恩惠从哪里涨，难度有影响吗？",
+      "房东报价和一次性购入店铺有关的难度乘数在哪里？",
+      "店里能熔金属的那台机器是什么？",
+      "想把矿料变成锭，找哪台炉子？",
+      "低声望使持枪资格消失，有什么方式拿回来？",
+      "wildFavor 可以通过普通卖货攒起来吗？",
+      "有什么渠道可以补买升级用的私人点数？",
+      "augPresence 什么时候算达到终止条件？",
+      "有个数值到一百会直接关档，是哪个？",
+      "摆能量电池会吸引什么样的访客？"
+    ]
+  }
+}
