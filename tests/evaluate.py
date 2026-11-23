@@ -17,6 +17,11 @@ def main():
         import kb
         index = kb.get_index(force=True)
         known = {doc["id"] for doc in index.docs}
+        corpus_hash = hashlib.sha256()
+        for doc in index.docs:
+            fields = [doc[key] for key in ("id", "kind", "name", "text")]
+            record = json.dumps(fields, ensure_ascii=False, separators=(",", ":"))
+            corpus_hash.update((record + "\n").encode("utf-8"))
         table = ROOT / "tests" / "queries.tsv"
         with table.open(encoding="utf-8", newline="") as source:
             rows = list(csv.DictReader(source, delimiter="\t"))
@@ -43,6 +48,7 @@ def main():
                 misses.append(query)
         totals = {k: sum(g[k] for g in groups.values()) for k in ("queries", "top1", "top3")}
         print(json.dumps({**totals, "documents": len(known), "kb_version": kb.KB_VERSION,
+                          "corpus_sha256": corpus_hash.hexdigest(),
                           "queries_sha256": hashlib.sha256(table.read_bytes()).hexdigest(),
                           "by_group": groups,
                           "top3_misses": misses}, ensure_ascii=False, indent=2))
